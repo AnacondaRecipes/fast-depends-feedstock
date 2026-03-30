@@ -19,12 +19,12 @@ rattler-build = "*"
 
 [tasks.inspect-all]
 cmd = "inspect_artifacts --all-packages"
-description = "List contents of all packages found in rattler-build build directory."
+description = "List contents of all packages found in the conda-build output directory."
 [tasks.build]
-cmd = "rattler-build build --recipe recipe"
+cmd = "conda build recipe"
 description = "Build fast-depends-feedstock directly (without setup scripts), no particular variant specified"
 [tasks."build-linux_64_"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_.yaml"
+cmd = "conda build recipe -m .ci_support/linux_64_.yaml"
 description = "Build fast-depends-feedstock with variant linux_64_ directly (without setup scripts)"
 [tasks."inspect-linux_64_"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_.yaml"
